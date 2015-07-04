@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+        .container {position:relative;width:600px;height:400px;overflow-y:hidden;}
+        .container img{ display:block;}
+        .container .silder {width:100%;}
+        .container .silder img{display:none;}
+        .container .silder img:first-child{display:block;}
+        .container .title{position:absolute;bottom:0px;margin:0;width:100%;background-color:#000;opacity:0.5;line-height:45px;}
+        .container .title span{ margin-left:20px;color:#fff;text-decoration:none;}
+        .container .controls{ position:absolute;bottom:18px;right:10px;line-height:10px;z-index:99;}
+        .container .controls ul li {list-style:none outside none; float: left; height: 20px; line-height: 20px; width: 20px;border-radius: 10px; text-align: center; margin-right: 5px; }
+        .container .controls label{ display:inline-block;width:22px;margin:auto 1px;height:22px;border-radius:12px;background-color:gray;text-align:center;box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);}
+        .container .controls label:hover {cursor:pointer;background-color:green;}
+        .container input[type="radio"] { display: none;}
+        .controls ul li #lbl1 { /* background-color:#6666ff;*/    }
+        .container span:before {
+                content: "我的前端之路1";
+            }
+            input[type="radio"][id="index1"]:checked ~.controls ul li #lbl1 {
+                background-color:#6666ff;
+            }
+            input[type="radio"][id="index1"]:checked ~.silder >.index1 {
+                display:block;
+            }
+            input[type="radio"][id="index1"]:checked  ~.silder >.index2,.index3 {
+                display:none;
+            }
+            input[type="radio"][id="index1"]:checked ~.title span:before {
+                content:"我的前端之路1";
+            }
+
+            input[type="radio"][id="index2"]:checked  ~.controls ul li #lbl2 {
+                background-color:#6666ff;
+            }
+            input[type="radio"][id="index2"]:checked ~.silder >.index2 {
+                display:block;
+            }
+            input[type="radio"][id="index2"]:checked  ~.silder >.index1,.index3 {
+                display:none;
+            }
+             input[type="radio"][id="index2"]:checked ~.title span:before {
+                content:"我的前端之路2";
+            }
+
+            input[type="radio"][id="index3"]:checked ~.controls ul li #lbl3 {
+                background-color:#6666ff;
+            }
+            input[type="radio"][id="index3"]:checked  ~.silder >.index3 {
+                display:block;
+            }
+            input[type="radio"][id="index3"]:checked  ~.silder >.index1,.index3 {
+                display:none;
+            }
+             input[type="radio"][id="index3"]:checked ~.title span:before {
+                content:"我的前端之路3";
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+         <input type="radio" name="silder" id="index1" checked />
+         <input type="radio" name="silder" id="index2" />
+         <input type="radio" name="silder" id="index3" />
+        <div class="controls">
+            <ul>
+                <li>
+                    <label for="index1" id="lbl1">1</label>
+                </li>
+                <li>
+                    <label for="index2" id="lbl2">2</label>
+                </li>
+                <li>
+                    <label for="index3" id="lbl3">3</label>
+                </li>
+            </ul>
+        </div>
+        <div class="silder">
+            <img src="img1.png" alt="我的前端之路1" class="index1" id="img1" />
+            <img src="img2.jpg" alt="我的前端之路2" class="index2" id="img2" />
+            <img src="img3.jpg" alt="我的前端之路3" class="index3" id="img3" />
+        </div>
+        <p class="title">
+            <span>
+                
+            </span>
+        </p>
+    </div>
+
+    <script>
+        var obj = {}, count = 0;
+        function logArray(value, index, array) {
+            count++;
+            obj[count] = value;
+        }
+        [1, 2, , 4].forEach(logArray);
+        alert(obj.toString());
+        alert(count);
+    </script>
+</body>
+</html>

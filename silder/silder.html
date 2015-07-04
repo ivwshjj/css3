@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head >
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="/js/angular.min.js"></script>
+    <script src="/js/angular-animate.min.js"></script>
+    <style>
+        *{
+font-family: 'Open Sans', sans-serif;
+}
+.center-grey{
+       background:#f2f2f2;
+}
+.slider{
+	position: relative;
+	padding:5px;
+	width:610px;
+	margin: auto;
+	margin-top: 40px;
+    border:1px solid red;
+
+}
+.slide{
+	position:relative;
+	top:0;
+	left:0;
+	box-shadow: 0px 0px 15px #999;
+}
+
+.arrows{
+	position: absolute;
+    bottom:0px;
+}
+
+.arrows img{
+	height: 32px;
+}
+
+h1{
+text-align: center;
+padding: 10px;
+font-size: 40px;
+color: #222;
+}
+ 
+.slide.ng-hide-add, .slide.ng-hide-remove {
+  -webkit-transition:all linear 0.5s;
+  -moz-transition:all linear 0.5s;
+  -o-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+  display:block!important;
+}
+ 
+.slide.ng-hide-add.ng-hide-add-active,.slide.ng-hide-remove {
+  opacity:0;
+}
+ 
+.slide.ng-hide-add,.slide.ng-hide-remove.ng-hide-remove-active {
+  opacity:1;
+}
+    </style>
+     <script src="app.js">
+    </script>
+</head>
+    <!--http://extremecss.com/demos/slider/#-->
+<body ng-app="sliderApp">
+    <div ng-controller="SliderController">
+        <h1>Slider Using AngularJS</h1>
+   <slider images="images"></slider>
+    </div>
+   
+</body>
+    
+</html>
